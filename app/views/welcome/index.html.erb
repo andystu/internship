@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>行銷系春天藝術節實習報名</h1>
+</div>
+<p>
+<% if current_user.name.empty? %>
+<%= link_to "我要報名", edit_user_registration_path, class: "btn btn-success" %>
+<% else %>
+<%= link_to "更新報名資料", edit_user_registration_path, class: "btn btn-default" %>
+<% end -%>
+<p>
+<%= image_tag "http://www.ksaf.com.tw/files/program/冒險英雄.jpg", size: "900x417" %>
+</p>

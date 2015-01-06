@@ -1,0 +1,84 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put , :class => "form-horizontal", :role => "form" }) do |f| %>
+  <%= devise_error_messages! %>
+
+<div class="form-group">
+    <div class="col-sm-10">
+    <%= f.email_field :email, autofocus: true, :class => "form-control" , placeholder: :email %>
+    </div>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+<!-- <div class="form-group">
+    <i>(leave blank if you don't want to change it)</i>    
+    <div class="col-sm-10">
+    <%= f.password_field :password, autocomplete: "off", :class => "form-control" , placeholder: :password %>
+    </div>
+  </div>
+
+<div class="form-group">
+    <div class="col-sm-10">
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" , placeholder: :password_confirmation %>
+    </div>
+  </div>
+ -->
+<div class="form-group">
+    <i>要更新資料請 需再輸入一次密碼 以確認更新</i>    
+    <div class="col-sm-10">
+    <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" , placeholder: "密碼" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.text_field :classlevel, :class => "form-control" , placeholder: "班級" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.text_field :sn, :class => "form-control" , placeholder: "學號" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.text_field :name, :class => "form-control" , placeholder: "姓名" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.text_field :tel, :class => "form-control" , placeholder: "電話" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.text_field :address, :class => "form-control" , placeholder: "居住地址" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.text_area :reason, :class => "form-control" , placeholder: "想參加的理由?" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.text_area :question, :class => "form-control" , placeholder: "想問的問題?" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-10">
+      <%= f.submit "更新資料", :class => "btn btn-primary" %>
+    </div>
+  </div>
+
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger"  %></p>
+
+<%= link_to "Back", :back , :class => "btn btn-warning" %>

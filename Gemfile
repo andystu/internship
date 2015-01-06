@@ -20,7 +20,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'bootstrap-generators'
+gem 'bootstrap_helper', github: 'afunction/bootstrap-helper'
+gem 'devise'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
