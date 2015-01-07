@@ -26,4 +26,7 @@
   <dt>Url:</dt>
   <dd><%= @intern.url %></dd>
 
+  <dt>申請?</dt>
+  <dd><%= link_to "我要申請", applyfor_intern_path(@intern), class: "btn btn-primary" %></dd>
+
 </dl>

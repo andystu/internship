@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   validates :name, :classlevel, :sn, :tel, presence: true, on: :update
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
+
+  has_many :requests
+  has_many :interns, through: :requests
 end

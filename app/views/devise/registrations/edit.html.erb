@@ -1,5 +1,6 @@
 <h2>報名資料更新</h2>
-    <h4>必填欄位一定要填寫,並輸入登入密碼更新資料,以完成報名.</h4>
+    <h4>1. 資料必填欄位一定要填寫 並完成更新才算報名成功.</h4>    
+    <h4>2. 更新資料時 請務必輸入登入密碼 以完成報名.</h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put , :class => "form-horizontal", :role => "form" }) do |f| %>
   <%= devise_error_messages! %>
@@ -29,7 +30,7 @@
  -->
 <div class="form-group">
     <div class="col-sm-10">
-    <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" , placeholder: "請輸入登入密碼以完成資料更新" %>
+    <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" , placeholder: "密碼 (必填)" %>
     </div>
   </div>
 

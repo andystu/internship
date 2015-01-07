@@ -1,8 +1,13 @@
 Internship::Application.routes.draw do
-  resources :interns
+  resources :requests
 
-  root 'welcome#index'
+  resources :interns do
+    member do
+      get 'applyfor'
+    end
+  end
   devise_for :users
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
