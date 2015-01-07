@@ -1,4 +1,6 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>報名資料更新</h2>
+    <h4>1. 資料必填欄位一定要填寫 並完成更新才算報名成功.</h4>    
+    <h4>2. 更新資料時 請務必輸入登入密碼 以完成報名.</h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put , :class => "form-horizontal", :role => "form" }) do |f| %>
   <%= devise_error_messages! %>
@@ -27,25 +29,24 @@
   </div>
  -->
 <div class="form-group">
-    <i>要更新資料請 需再輸入一次密碼 以確認更新</i>    
     <div class="col-sm-10">
-    <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" , placeholder: "密碼" %>
+    <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" , placeholder: "請輸入登入密碼以完成資料更新" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-10">
-      <%= f.text_field :classlevel, :class => "form-control" , placeholder: "班級" %>
+      <%= f.text_field :classlevel, :class => "form-control" , placeholder: "班級 (必填)" %>
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-10">
-      <%= f.text_field :sn, :class => "form-control" , placeholder: "學號" %>
+      <%= f.text_field :sn, :class => "form-control" , placeholder: "學號 (必填)" %>
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-10">
-      <%= f.text_field :name, :class => "form-control" , placeholder: "姓名" %>
+      <%= f.text_field :name, :class => "form-control" , placeholder: "姓名 (必填)" %>
     </div>
   </div>
   <div class="form-group">
