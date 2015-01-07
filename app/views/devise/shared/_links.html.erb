@@ -1,11 +1,11 @@
+<h3> 若尚未使用過本系統, 請先用email註冊後, 再登入報名 </h3>
+
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-default" %><br />
+  <%= link_to "登入", new_session_path(resource_name), class: "btn btn-default" %><br />
 <% end -%>
-
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-default" %><br />
+  <%= link_to "註冊", new_registration_path(resource_name), class: "btn btn-default" %><br />
 <% end -%>
-
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-default" %><br />
 <% end -%>
