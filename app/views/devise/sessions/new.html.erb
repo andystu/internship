@@ -4,18 +4,18 @@
   <%= devise_error_messages! %>
 
   <div class="form-group">
-    <div class="col-sm-8">
+    <div class="col-sm-4">
     <%= f.email_field :email, autofocus: true , placeholder: "email" , :class => "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-8">
+    <div class="col-sm-4">
     <%= f.password_field :password, autocomplete: "off" , placeholder: "password" , :class => "form-control" %>
     </div>
     <% if @validatable %>
     <div class="col-sm-4">
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(至少 <%= @minimum_password_length %> 個字元)</em>
     </div>
     <% end %>
   </div>
