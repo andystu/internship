@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Internship::Application.config.secret_key_base = '866b1660e554d5c14986a4c91f0c824fc66c42f4eb1e30ad99ac24c35f396cdadcd98b13caf54b26020e6a8a9883ff90458c5fc698230820930a16508bc1dcae'
+Internship::Application.config.secret_key_base = 'f3728394c6383075a4942a7d18aa5fcf8cd572fa675ebe5b56f5199abbf64ed83a34a5e2b5f2ec4745937e013de60474eaf82fea6f86a37ca8d861d61d40166b'
