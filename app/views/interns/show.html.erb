@@ -26,7 +26,7 @@
   <dd><%= @intern.description.html_safe %></dd>
 
   <dt>參考網址</dt>
-  <dd><%= @intern.url %></dd>
+  <dd><%= link_to @intern.url, @intern.url %></dd>
 
   <dt>申請?</dt>
   <dd><%= link_to "我要申請", applyfor_intern_path(@intern), class: "btn btn-primary" %></dd>
