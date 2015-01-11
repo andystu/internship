@@ -3,8 +3,9 @@ class AddInfoToUsers < ActiveRecord::Migration
     add_column :users, :name, :string
     add_column :users, :tel, :string
     add_column :users, :address, :string
-    add_column :users, :reason, :text
-    add_column :users, :question, :text
-    add_column :users, :admin, :boolean
+#    add_column :users, :reason, :text
+#    add_column :users, :question, :text
+    add_column :users, :admin, :boolean, :default => :false
+    add_column :users, :gender, :boolean
   end
 end

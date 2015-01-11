@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'bootstrap-generators'
 gem 'bootstrap_helper', github: 'afunction/bootstrap-helper'
 gem 'devise'
+gem 'ckeditor'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

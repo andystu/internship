@@ -1,4 +1,5 @@
 <div class="page-header">
+<% if current_user.admin %>
   <%= link_to interns_path, :class => 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
@@ -7,23 +8,24 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show intern</h1>
+<% end -%>
+  <h1>實習資訊</h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt>Title:</dt>
+  <dt>實習單位</dt>
   <dd><%= @intern.title %></dd>
 
-  <dt>Starttime:</dt>
+  <dt>公告日期</dt>
   <dd><%= @intern.starttime %></dd>
 
-  <dt>Endtime:</dt>
+  <dt>截止日期</dt>
   <dd><%= @intern.endtime %></dd>
 
-  <dt>Description:</dt>
-  <dd><%= @intern.description %></dd>
+  <dt>實習說明</dt>
+  <dd><%= @intern.description.html_safe %></dd>
 
-  <dt>Url:</dt>
+  <dt>參考網址</dt>
   <dd><%= @intern.url %></dd>
 
   <dt>申請?</dt>

@@ -1,36 +1,40 @@
 <div class="page-header">
+<% if current_user.admin %>
   <%= link_to new_intern_path, :class => 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-plus"></span>
-    New Intern
+    新增實習
   <% end %>
-  <h1>Listing interns</h1>
+<% end %>
+  <h1>實習資訊</h1>
 </div>
 
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-            <th>Title</th>
-            <th>Starttime</th>
-            <th>Endtime</th>
-            <th>Description</th>
-            <th>Url</th>
+            <th>實習單位</th>
+            <th>公告日期</th>
+            <th>截止日期</th>
             <th></th>
-        <th></th>
-        <th></th>
       </tr>
     </thead>
 
     <tbody>
       <%= content_tag_for(:tr, @interns) do |intern| %>
-            <td><%= intern.title %></td>
+            <td><%= link_to intern.title, intern %></td>
             <td><%= intern.starttime %></td>
             <td><%= intern.endtime %></td>
-            <td><%= intern.description %></td>
-            <td><%= intern.url %></td>
-            <td><%= link_to 'Show', intern %></td>
-        <td><%= link_to 'Edit', edit_intern_path(intern) %></td>
-        <td><%= link_to 'Destroy', intern, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% if intern.endtime.past? %>
+            <td>已截止</td>
+            <% else %>
+            <td><%= link_to '我要申請', intern, class: "btn btn-default" %></td>
+            <% end %>
+        <% if current_user.admin %>
+        <td><%= link_to '名單', applylist_intern_path(intern), class: "btn btn-default" %></td>
+        <td><%= link_to '修改', edit_intern_path(intern) , class: "btn btn-default"  %></td>
+        <td><%= link_to '刪除', intern, method: :delete, data: { confirm: '確定要刪除?' } , class: "btn btn-default"  %></td>
+        <td><%= link_to '複製', clone_intern_path(intern), class: "btn btn-default" %></td>
+        <% end %>
       <% end %>
     </tbody>
   </table>
